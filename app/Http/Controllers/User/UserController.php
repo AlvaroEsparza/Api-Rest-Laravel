@@ -58,11 +58,14 @@ class UserController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $usuario = User::findOrFail($id);
 
-        return $this->showOne($usuario);
+    //Busqueda por inyección implicita de modelo
+    public function show(User $user /*$id*/)
+    {
+        /*$usuario = User::findOrFail($id);
+
+        return $this->showOne($usuario);*/
+        return $this->showOne($user);
     }
 
 
