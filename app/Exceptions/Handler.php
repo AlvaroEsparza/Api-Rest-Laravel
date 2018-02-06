@@ -85,7 +85,13 @@ class Handler extends ExceptionHandler
             return $this->errorResponse('No s epuede eliminar de forma permanente el recurso puesto que esta relacionado con otro', 409);
             }   
         }
-        return parent::render($request, $exception);
+
+        if(config('app.debug')){
+            return parent::render($request, $exception);
+        }
+
+        return $this->errorResponse('falla inesperada. Intente de nuevo más tarde', 500);
+        
     }
 
     /**
