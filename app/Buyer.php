@@ -4,6 +4,7 @@ namespace ApiRestful;
 
 use Illuminate\Database\Eloquent\Model;
 Use ApiRestful\Scopes\BuyerScope;
+use ApiRestful\Transaction;
 class Buyer extends User
 {
 	protected static function boot()
