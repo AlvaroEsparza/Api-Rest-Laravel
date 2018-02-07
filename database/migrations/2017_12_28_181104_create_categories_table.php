@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('description', 1000);
 
             $table->timestamps();
+            $table->softDeletes();//eliminación por fecha
             $table->engine = 'InnoDB';
         });
     }

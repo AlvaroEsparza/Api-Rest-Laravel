@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('admin')->default(User::USUARIO_REGULAR);
             $table->engine = 'InnoDB';
             $table->timestamps();
+            $table->softDeletes();//eliminación por fecha
         });
     }
 
